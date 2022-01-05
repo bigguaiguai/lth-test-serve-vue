@@ -1,5 +1,19 @@
 
 const router = require('koa-router')()
+// 常用内置方法
+// model.deleteMany()
+// model.deleteOne()
+// model.find()
+// model.findById()
+// model.findByIdAndDelete(),
+// model.findByIdAndRemove(),
+// model.findByIdAndUpdate(),
+// model.findOneAndDelete(),
+// model.findOneAndRemove(),
+// model.findOndAndUpdate(),
+// model.replaceOne(),
+// model.updateMany(),
+// model.updateOne()
 
 // 引入mongo模型
 const Person = require('../../dbs/models/person')
@@ -126,7 +140,6 @@ router.post('/getPersonDetail', async function (ctx) {
   const _id = ctx.request.body._id
   try {
     result = await Person.find({_id}).populate('detail')
-    console.log(result,'res1')
   } catch (e) {
     console.log(e, 'eee')
   }
