@@ -20,6 +20,7 @@ const {verToken,SECRET} = require('./config/constants') //jwt密匙和封装的�
 const index = require('./routes/index')
 const person = require('./routes/person/index')
 const login = require('./routes/login/index')
+const requirement = require('./routes/requirement')
 
 // 连接数据库
 const mongoose = require('mongoose') // mongoose 用于连接数据库
@@ -98,6 +99,7 @@ app.use(async (ctx, next) => {
 app.use(index.routes(), index.allowedMethods())
 app.use(person.routes(), person.allowedMethods())
 app.use(login.routes(), login.allowedMethods())
+app.use(requirement.routes(), requirement.allowedMethods())
 
 // 连接数据库的服务
 mongoose.connect(dbConfig.dbs, {

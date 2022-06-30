@@ -39,7 +39,7 @@ router.post('/addPerson', async function (ctx) {
   } catch (e) {
     code = 400;
     success = false
-    msg = '新增失败:' + e;;
+    msg = '新增失败:' + e;
   }
   ctx.body = {
     code,
